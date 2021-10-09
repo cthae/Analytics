@@ -52,4 +52,11 @@ window.onbeforeunload = function(){return false;}
 _satellite.setDebug(1);
 ```
 
+## Automated exec:
+This is especially useful if you have separate Chrome profiles just to do analytics implementation. Although it can be used in your default profile too.
+
+The idea here is to execute arbitrary JS mainly on pageloads from your browser. It's extremely rare that, as a Launch implementator, you would need debugging off. Maybe never.
+
+There are a few useful extensions that allow you to execute arbitrary code in a browser. I will be using Tampermonkey: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en
+
 _this is work in progress_
