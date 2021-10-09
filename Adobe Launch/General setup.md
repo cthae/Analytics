@@ -11,10 +11,10 @@ Use LastPass or a similar extension to manage passwords. You can use separate in
 ## In-browser setup
 
 1. Adblockers off.
-2. Adobe Experience Cloud Debugger: https://experienceleague.adobe.com/docs/debugger/using/experience-cloud-debugger.html?lang=en
+2. Adobe Experience Cloud Debugger: https://experienceleague.adobe.com/docs/debugger/using/experience-cloud-debugger.html?lang=en (Be careful when using across different profiles. This extension can get confused)
 3. Debugger for Adobe Analytics: https://chrome.google.com/webstore/detail/debugger-for-adobe-analyt/bdingoflfadhnjohjaplginnpjeclmof?hl=en
 4. EditThisCookie or a similar extension: https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=en
 5. Allow all three extensions to work in Incognito.
-6. Have different 
+
 
 _this is work in progress_

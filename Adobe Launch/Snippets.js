@@ -18,7 +18,6 @@ _satellite.cookie.set("qwe", 123, {expires: 0.021})
 
 //Just a snippet to find a cookie for when satellite.cookie.get is not applicable
 document.cookie.split('; ').find(row => row.startsWith(cookieName+'=')).split('=')[1]
-function getCookie(cookieName){return ;}
 
 //What it says, basically. Decodes URI-encoded strings
 decodeURIComponent(getCookie("s_pers"))
@@ -28,6 +27,9 @@ window.dataLayer = window.dataLayer || [];
 dataLayer.push({
   'event':'eventName'
 });
+
+//Get current property name
+_satellite.property.name
 
 //To find out how long ago the library was built:
 function formattedTimeSinceLastBuild(){
