@@ -32,17 +32,30 @@ dataLayer.push({
 _satellite.property.name
 
 //To find out how long ago the library was built:
-function formattedTimeSinceLastBuild(){
-  var ms =  new Date - new Date(_satellite.buildInfo.buildDate);
-  let seconds = (ms / 1000).toFixed(1);
-  let minutes = (ms / (1000 * 60)).toFixed(1);
-  let hours = (ms / (1000 * 60 * 60)).toFixed(1);
-  let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
-  if (seconds < 60) return seconds + " Sec";
-  else if (minutes < 60) return minutes + " Min";
-  else if (hours < 24) return hours + " Hrs";
-  else return days + " Days";
- }
+(function () {
+  function formattedTimeSinceLastBuild() {
+    var ms = new Date() - new Date(_satellite.buildInfo.buildDate);
+    let seconds = (ms / 1000).toFixed(1);
+    let minutes = (ms / (1000 * 60)).toFixed(1);
+    let hours = (ms / (1000 * 60 * 60)).toFixed(1);
+    let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
+    if (seconds < 60) return seconds + " Sec";
+    else if (minutes < 60) return minutes + " Min";
+    else if (hours < 24) return hours + " Hrs";
+    else return days + " Days";
+  }
+
+  const color = "lime"; //Feel free to change the color here. Personally I prefer lime since my console is dark. Green is more universal.
+  const css = `text-shadow: 1px 1px 1px ${color}, 0 0 1em ${color}, 0 0 0.2em ${color};color: ${color};font-weight: 500;font-size: 1.3em;`;
+
+  console.log(
+    "%c Time since the last Launch build: >>> " + formattedTimeSinceLastBuild(),
+    css
+  );
+  console.log("%c ENVIRONMENT: >>> " + _satellite.environment.stage.toUpperCase(), css);
+  return ''; //to avoid the annoying undefined in the console.
+})();
+
  
 console.log("Time since the last Launch build: >>> " + formattedTimeSinceLastBuild());
 
