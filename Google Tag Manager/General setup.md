@@ -6,7 +6,7 @@ Optionally make a separated Google Chrome profile.
 Very handy when working for different agencies at the same time.
 Allows to have separated logged in Google profiles and separate sets of extensions at the same time.
 
-Use LastPass or a similar extension to manage passwords. You can use separate instances across different browser profiles, but there's little need to do so unless you're being forced by your employer.
+Use LastPass or a similar extension to manage passwords. You can use separate instances across different browser profiles, but there's little need to do so unless you're being forced by your agency/client.
 
 ## In-browser setup
 
