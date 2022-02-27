@@ -13,6 +13,10 @@ try {
 } catch (err){
   _satellite.logger.error("@@@LAUNCH ERROR || RULE: " + event.$rule.name + " || ERROR: " + err);
 }
+
+// .pop(), but not mutating? EZ!
+[1,2,3].slice(-1)[0];
+
 //_satellite.cookie interface is not very intuitive (the expires in an object part):
 _satellite.cookie.set("qwe", 123, {expires: 0.021})
 
