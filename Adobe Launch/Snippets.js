@@ -104,6 +104,26 @@ const listeners = (function listAllEventListeners() {
 })();
 
 console.table(listeners);
+//Prints all DEs to the console. Or, if a name is passed as a param, will print only DEs that contain that name.
+(function (name = ""){
+  Object.keys(_satellite._container.dataElements).forEach(DEName => {
+      if (name != "" && DEName.indexOf(name) == -1){
+          return;
+      }
+      const DEVar = _satellite.getVar(DEName);
+      if (typeof DEVar !== "function" && typeof DEVar !== "undefined"){
+          if(DEVar === ""){
+              console.log (DEName + " >>> \"\"");
+          } else {
+              console.log (DEName + " >>> " + DEVar);
+          }
+      } else if (typeof DEVar === "function"){
+          console.log (DEName + " (FUNCTION)>>> " + eval(DEVar));
+      } else if (typeof DEVar === "undefined"){
+          console.log (DEName + " >>> UNDEFINED");
+      }
+  })
+})("")
 
 //This becomes useful... when you need to distinguish a navigation from a page refresh. 
 function print_nav_timing_data() {
