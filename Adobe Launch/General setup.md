@@ -15,6 +15,7 @@ Use LastPass or a similar extension to manage passwords. You can use separate in
 3. Debugger for Adobe Analytics: https://chrome.google.com/webstore/detail/debugger-for-adobe-analyt/bdingoflfadhnjohjaplginnpjeclmof?hl=en
 4. EditThisCookie or a similar extension: https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=en
 5. Allow all three extensions to work in Incognito.
+6. One more good extension is here: https://chrome.google.com/webstore/detail/adobe-experience-cloud-bo/eobofinmnpbpbbmjhoickgllciakebjn you can read more about it here: https://medium.com/@andrey.osadchuk/mohammed-comes-to-aep-data-collection-tags-ui-e921903c513e
 
 ## Advanced in-browser setup:
 
