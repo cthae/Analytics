@@ -35,6 +35,7 @@ mainPayload.containerVersion.tag.forEach(function (tag) {
             tagDimParameter.list.push(JSON.parse(JSON.stringify(cd.list[0])));
         }
         else{//no dimensions are set in the tag
+            tag.parameter.find(function (param) { return param.key == "overrideGaSettings"; }).value = "true";
             tag.parameter.push(JSON.parse(JSON.stringify(cd)));
         }
     }
