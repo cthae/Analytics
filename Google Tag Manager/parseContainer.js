@@ -11,7 +11,7 @@
 4. Type var mainPayload =   and paste your json there. Hit enter.
 5. Copy my code, change the dimNumber value in it to the actual custom dimension you would like to use for this. 
 I would suggest using hit-level CD unless you want to find out which tag fired last in a session, lol.
-6. Paste the code. Hit enter. Paste the code. Hit enter. Type mainPayload , hit enter. 
+6. Paste the code. Hit enter. Type mainPayload , hit enter. 
 Right click on the object (at the very beginning of it), choose to copy the whole object. 
 7. Now paste the object in a separate tab and compare its structure to the object that you've exported. 
 It should have the same structure. You can also check if the new object has the custom dimensions set properly.
