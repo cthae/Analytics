@@ -26,15 +26,22 @@ main(){
 
 }
 
-realClick(delay := 30){
-	MouseClick("Left",,,1,20,"Down")
-	Sleep(delay)
-	MouseClick("Left",,,1,20,"Up")
+
+mouseDrag(x1,y1,x2,y2,speed := 90, clickDelay := 25){
+	MouseMove(x1, y1, 50)
+	Click("Down")
+	Sleep(clickDelay)
+	SendEvent("{Click " . x2 . " " . y2 . " 0}")
+	;MouseMove(x2, y2, speed)
+	Sleep(clickDelay)
+	Click("Up")
 }
 
 getMouseCoords(){
 	; This is for mouse position tracking
-	MouseGetPos OutputVarX, OutputVarY
+	OutputVarX := 0
+	OutputVarY := 0
+	MouseGetPos(&OutputVarX, &OutputVarY)
 	ColorVar := 0
 	OutputVarX := OutputVarX ;- 10
 	OutputVarY := OutputVarY ;- 10
@@ -44,36 +51,42 @@ getMouseCoords(){
 	return
 }
 
+waitForTheFirstOf(paths, delay := 500){
+	Loop{
+		for(k, v in paths){
+			coords := detector(v)
+			if(coords){
+				coords.InsertAt(3,k)
+				return coords
+			}
+			Sleep(Ceil(delay/10))
+		}
+		Sleep(delay)
+	}
+}
+
+waitUntil(path, delay := 500){
+	Loop{
+		coords := detector(v)
+		if(coords)
+			return coords
+		Sleep(delay)
+	}
+}
+
 detector(path){
 	; This function detects images on screen.
-	ErrorLvl := ImageSearch(FoundX, FoundY, 0, 0, 1920, 1080, A_ScriptDir . "" . path)
+	FoundX := 0
+	FoundY := 0
+	ErrorLvl := ImageSearch(&FoundX, &FoundY, 0, 0, 1920, 1080, A_ScriptDir . "" . path)
 	if(ErrorLvl = 1) {
 		;MsgBox path." was found at " . FoundX . "x" . FoundY
 		return [FoundX, FoundY]
 	}
 	else{
-		;MsgBox(A_ScriptDir . "/images/GC/" . path . " was NOT found.")
+		;MsgBox(A_ScriptDir . "/images/test.png" . path . " was NOT found.")
 		return false
 	}
-}
-
-chat(text, delay){
-	Send("{Enter}")
-	Sleep(delay)
-	SetKeyDelay(2,1)
-	SendEvent(text)
-	Sleep(delay)
-	Send("{Enter}")
-}
-
-pressKey(charkey, count := 1, ms := 30){
-    Loop count
-    {
-        Send("{" . charkey . " down}")
-        Sleep(ms)
-        Send("{" . charkey . " up}")
-        Sleep(ms)
-    }
 }
 
 issueAlarm(delay := 5, step := 100, stepDuration := 100, beeps := 8, i:=0){
