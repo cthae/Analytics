@@ -12,5 +12,5 @@ s.doPlugins = function (s) {
   //Keep this at the end of doPlugins:
   s.url = document.location.href;//because AA extension still has little clue about SPAs.
   s.linkTrackEvents = s.apl(s.linkTrackEvents, s.events, ",", ","); //because linkTrackEvents do much more harm than good.
-  s.linkTrackVars = s.apl(s.linkTrackVars, "events,products", ",", ","); 
+  s.linkTrackVars = s.apl(s.linkTrackVars, "events,products", ",", ","); //because clearing vars is a universal must. 
 }
