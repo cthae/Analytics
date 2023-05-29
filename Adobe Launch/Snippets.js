@@ -19,7 +19,7 @@ try {
 
 //_satellite.cookie interface is not very intuitive (the expires in an object part):
 _satellite.cookie.set("qwe", 123, {expires: 0.021})
-
+_satellite.cookie.set('30-day-cookie', 'value', {expires: 30});
 //Just a snippet to find a cookie for when satellite.cookie.get is not applicable
 document.cookie.split('; ').find(row => row.startsWith(cookieName+'=')).split('=')[1]
 
