@@ -35,6 +35,15 @@ dataLayer.push({
 //Get current property name
 _satellite.property.name
 
+//Change the Report Suite on the fly:
+s.sa("examplersid");
+
+//A generic sanitization function to prepare stuff before adding it to the products string
+function sanitize(item) {
+  return item.trim().replace('\'', '').replace(/\W+/g, " ");
+}
+//PRODUCT. I should write a nice and simple snippet for product string generation. I keep writing them from scratch. Will do so later.
+
 //To find out how long ago the library was built:
 (function () {
   function formattedTimeSinceLastBuild() {
