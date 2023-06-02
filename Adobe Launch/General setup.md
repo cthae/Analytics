@@ -10,7 +10,7 @@ Use LastPass or a similar extension to manage passwords. You can use separate in
 
 Useful third party tools for library analysis:
 
-http://www.satelliteviewer.net/about.html
+http://www.satelliteviewer.net
 
 https://launch-viewer.ariak.dev
 
