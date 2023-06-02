@@ -9,7 +9,9 @@ Allows to have separated logged in Google profiles and separate sets of extensio
 Use LastPass or a similar extension to manage passwords. You can use separate instances across different browser profiles, but there's little need to do so unless you're being forced by your employer.
 
 Useful third party tools for library analysis:
+
 http://www.satelliteviewer.net/about.html
+
 https://launch-viewer.ariak.dev
 
 ## In-browser setup: first steps
