@@ -1,0 +1,4 @@
+Useful OT functions:
+1. Add a query param to override geolocation: ?otgeo=ca,qc
+2. Check current geolocation: Optanon.getGeolocationData()
+3. Resurface consent: Optanon.ToggleInfoDisplay()
