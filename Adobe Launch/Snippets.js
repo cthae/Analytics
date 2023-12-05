@@ -75,6 +75,18 @@ console.log("Time since the last Launch build: >>> " + formattedTimeSinceLastBui
 //A useful callback for Launch
 s.registerPostTrackCallback()
 
+//set Launch tracking permissions: https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/launch.html?lang=en
+adobe.optIn.approve([ adobe.OptInCategories.ANALYTICS] , true);
+
+adobe.optIn.complete();
+
+adobe.optIn.deny([ adobe.OptInCategories.ANALYTICS] , true);
+
+adobe.optIn.complete();
+
+//Print current Launch tracking permissions:
+adobe.optIn.fetchPermissions(x => {console.log(x)})
+
 //Just an s.tl() snippet to avoid typing.
 s.tl(true, 'o', "Link Name");
 
