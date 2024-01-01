@@ -30,10 +30,11 @@ function checkConsent() {
   decodeURIComponent(fullCookie.split("groups=")[1].split("&")[0]).split(",").forEach((groupPair) => {
     let c = groupPair.split(":")[1] === "1" ? color.good : color.bad;
     console.log("%c Group " + groupPair.split(":")[0] + " = " + groupPair.split(":")[1], css(c));
-  })
+  });
+  function css(c) {
+    return `text-shadow: 1px 1px 1px ${c}, 0 0 1em ${c}, 0 0 0.2em ${c};color: ${c};font-weight: 500;font-size: 1.3em;`;
+  }
 }
 
-function css(c) {
-  return `text-shadow: 1px 1px 1px ${c}, 0 0 1em ${c}, 0 0 0.2em ${c};color: ${c};font-weight: 500;font-size: 1.3em;`;
-}
+
 checkConsent();
