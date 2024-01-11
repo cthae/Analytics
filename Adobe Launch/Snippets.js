@@ -168,3 +168,16 @@ function print_nav_timing_data() {
     console.log("redirectCount = " + p.redirectCount);
   }
 }
+// You probably don't need this one...
+
+const wait = () => new Promise((res) => setTimeout(() => res(), 0));
+async function analyticsChecker() {
+  let x = 0n;
+  while (true) {
+    x++;
+    if (x % 10000000n === 0n) {
+      await wait();
+    }
+  }
+}
+analyticsChecker()
