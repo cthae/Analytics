@@ -168,7 +168,7 @@ function print_nav_timing_data() {
     console.log("redirectCount = " + p.redirectCount);
   }
 }
-// You probably don't need this one...
+// You probably don't need this one... run chrome with --disable-background-timer-throttling
 
 const wait = () => new Promise((res) => setTimeout(() => res(), 0));
 async function analyticsChecker() {
