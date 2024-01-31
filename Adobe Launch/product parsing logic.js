@@ -14,7 +14,7 @@ s.products = items.map(item => {
     (item.item_id ? ("|eVar25=" + item.item_id) : '') +
     (item.item_list_price ? ("|eVar26=" + item.item_list_price) : '') +
     (item.item_brand ? ("|eVar27=" + item.item_brand) : '')
-}).join()
+}).join();
 
 function sanitize(value) {
   if (typeof value === "string") {
