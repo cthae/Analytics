@@ -17,10 +17,10 @@ s.products = items.map(item => {
 }).join()
 
 function sanitize(value) {
-  if (value) {
+  if (typeof value === "string") {
     return value.replace('\'', '').replace(/\W+/g, " ").trim();
   } else {
-    return "";
+    return value;
   }
 }
 
